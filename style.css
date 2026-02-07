@@ -1,0 +1,41 @@
+body {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+h2 {
+    text-align: center;
+}
+.links {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    line-height: 1;
+}
+.links span {
+    margin-right: auto;
+    line-height: 1;
+}
+.links a {
+    margin: 0 10px;
+	color: black;
+}
+.license {
+    display: flex;
+	align-items: center;
+    padding: 10px 20px;
+    line-height: 1;
+	font-size: small;
+}
+.license span {
+	margin-right: auto;
+    line-height: 1;
+}
+.license a {
+    margin: 0 10px;
+	color: black;
+	text-decoration: none;
+}
+.license a:hover {
+	text-decoration: underline;
+}
