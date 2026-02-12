@@ -39,6 +39,7 @@ jobs:
           rm -f README.md
           rm -f LICENSE
           rm -f CONTENT_LICENSE
+          rm -f .gitignore
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
