@@ -33,6 +33,13 @@ jobs:
       - name: Compile SASS
         run: npx sass style.sass style.css --style=compressed --no-source-map
 
+      - name: Clean up
+        run: |
+          rm -f style.sass
+          rm -f README.md
+          rm -f LICENSE
+          rm -f CONTENT_LICENSE
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
