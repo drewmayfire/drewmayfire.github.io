@@ -1,0 +1,1 @@
+This site is built by a single engineer exploring low-level programming, Linux internals, and cybersecurity. It serves as a personal technical blog for documenting experiments, notes, and research. The content evolves over time, and the site is intentionally minimal, static, and framework-free.
