@@ -2,28 +2,47 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Andrei Khomenkov — All articles</title>
+	<title>Andrei Khomenkov — Example article</title>
 	<link rel="icon" type="image/png" href="../favicon.png">
 	<link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="../assets/css/github.min.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
   	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta property="og:title" content="Andrei Khomenkov — All articles">
-    <meta property="og:description" content="All my articles.">
-    <meta property="og:url" content="https://drewmayfire.github.io/blog/">
+	<meta property="og:title" content="Andrei Khomenkov — Example article">
+    <meta property="og:description" content="Example article with code highlighting.">
+    <meta property="og:url" content="https://drewmayfire.github.io/blog/example.html">
     <meta property="og:type" content="website">
 </head>
 <body>
 	<main>
-		<h1>All articles</h1>
-		<section class="recent-posts">
-			<article>
-				<h3><a href="example.html">Example article</a></h3>
-				<time datetime="2026-02-15">2026-02-15</time>
-				<p>Short description...</p>
-			</article>
-		<section>
+		<h1>Example article</h1>
+		<p>
+			Example of code highlighting:
+		</p>
+<pre><code class="language-c">static comp_t encode_comp_t(u64 value)
+{
+	int exp, rnd;
+
+	exp = rnd = 0;
+	while (value > MAXFRACT) {
+		rnd = value & (1 << (EXPSIZE - 1));
+		value >>= EXPSIZE;
+		exp++;
+	}
+
+	if (rnd && (++value > MAXFRACT)) {
+		value >>= EXPSIZE;
+		exp++;
+	}
+
+	if (exp > (((comp_t) ~0U) >> MANTSIZE))
+		return (comp_t) ~0U;
+	exp <<= MANTSIZE;
+	exp += value;
+	return exp;
+}</code></pre>
 	</main>
 	<footer>
 		<div class="links">
@@ -43,5 +62,7 @@
 			<span class="build"><!-- BUILD_INFO --></span>
 		</div>
 	</footer>
+	<script src="../assets/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </body>
 </html>
