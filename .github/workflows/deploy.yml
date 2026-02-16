@@ -31,7 +31,7 @@ jobs:
           node-version: 20
 
       - name: Compile SASS
-        run: npx sass style.sass style.css --style=compressed --no-source-map
+        run: npx sass style.sass style.css --style=compressed --no-source-map && npx sass fonts.sass fonts.css --style=compressed --no-source-map
 
       - name: Inject build info
         run: |
@@ -42,9 +42,10 @@ jobs:
       - name: Clean up
         run: |
           rm -f style.sass
-          rm -f README.md
-          rm -f LICENSE
-          rm -f CONTENT_LICENSE
+          rm -f fonts.sass
+          rm -f LICENSE-CODE
+          rm -f LICENSE-CONTENT
+          rm -f assets/fonts/LICENSE-FONTS
           rm -f .gitignore
 
       - name: Setup Pages
