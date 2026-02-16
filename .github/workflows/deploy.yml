@@ -33,12 +33,6 @@ jobs:
       - name: Compile SASS
         run: npx sass style.sass style.css --style=compressed --no-source-map && npx sass fonts.sass fonts.css --style=compressed --no-source-map
 
-      - name: Inject build info
-        run: |
-          BUILD_NUM=$(echo $GITHUB_RUN_NUMBER)
-          BUILD_DATE=$(date -u +%Y%m%dT%H%M%SZ)
-          sed -i "s/<!-- BUILD_INFO -->/build v${BUILD_NUM} (${BUILD_DATE})/" *.html
-
       - name: Clean up
         run: |
           rm -f style.sass
