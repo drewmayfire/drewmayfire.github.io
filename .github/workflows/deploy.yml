@@ -38,8 +38,8 @@ jobs:
           rm -f style.sass
           rm -f fonts.sass
           rm -f LICENSE-CODE
+          rm -f LICENSE-FONTS
           rm -f LICENSE-CONTENT
-          rm -f assets/fonts/LICENSE-FONTS
           rm -f .gitignore
 
       - name: Setup Pages
