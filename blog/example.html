@@ -19,28 +19,18 @@
 		<p>
 			Example of code highlighting:
 		</p>
-<pre><code class="language-c">static comp_t encode_comp_t(u64 value)
-{
-	int exp, rnd;
+		<div class="code-block">
+			<span class="lang">JavaScript</span>
+			<button class="copy" data-copy>Copy</button>
+			<pre><code class="javascript">
+				const hello = "world";
+				console.log(hello);
 
-	exp = rnd = 0;
-	while (value > MAXFRACT) {
-		rnd = value & (1 << (EXPSIZE - 1));
-		value >>= EXPSIZE;
-		exp++;
-	}
-
-	if (rnd && (++value > MAXFRACT)) {
-		value >>= EXPSIZE;
-		exp++;
-	}
-
-	if (exp > (((comp_t) ~0U) >> MANTSIZE))
-		return (comp_t) ~0U;
-	exp <<= MANTSIZE;
-	exp += value;
-	return exp;
-}</code></pre>
+				function greet(name) {
+					return `Hello, ${name}!`;
+				}
+			</code></pre>
+		</div>
 	</main>
 	<footer>
 		<div class="links">
@@ -58,7 +48,8 @@
 			<a href="../">Home</a>
 		</div>
 	</footer>
-	<script src="../assets/js/highlight.min.js"></script>
+	<script src="/assets/js/highlight.min.js"></script>
+	<script src="/assets/js/copy.js"></script>
     <script>hljs.highlightAll();</script>
 </body>
 </html>
